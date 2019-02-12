@@ -1,7 +1,7 @@
 ## PLANS
 ### PHP-backend
-*Main Page*
-List the posts from guest_pasta and public posts from user_pasta, list comments
+<h3>**Main Page**</h3>
+<p>List the posts from guest_pasta and public posts from user_pasta, list comments</p>
 **Add Pasta**
 **Register-Login**
 **Admin**
