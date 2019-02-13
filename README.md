@@ -1,3 +1,8 @@
+
+- [Plans about the site](#PLANS)
+- [Currently I am working on...](#IN-PROGRESSS)
+- [What is finished?](#DONE)
+
 ## PLANS
 ### PHP-backend
 <h5>Main Page</h5>
