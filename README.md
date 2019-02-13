@@ -1,3 +1,8 @@
+
+- [Plans about the site](#PLANS)
+- [Currently I am working on...](#IN-PROGRESSS)
+- [What is finished?](#DONE)
+
 ## PLANS
 ### PHP-backend
 <h5>Main Page</h5>
@@ -11,9 +16,29 @@
 <h5>Admin</h5>
 <p>Only admin users can see this option. This kind of users can see all the posts and can delete without pw.</p>
 <h5>Report bug/suggest correction</h5>
+<p>Button on every OPENED pasta. Preload the code for the editor. Log wihich rows have been edited.</p>
+
+`Tools: Vanilla PHP`
 
 ### React/vanilla-frontend
 **`Note: React just optional beacuse of the time`**
+<h4>MAIN CONCEPT</h4>
+<ul>
+    <li>Dark theme: dark/gray/black bg-s popups etc.</li>
+    <li>Use as much nes.css as I can, but keep it readable.</li>
+    <li>Make it as userfriendly as I can.</li>
+    <li>Navbar(dark w/logo) => Right: Search, Left: Home, Add, Register-Login, (hidden)Admin</li>
+    <li><a href="https://github.com/thedaviddias/Front-End-Checklist">Follow this list</a></li>
+</ul>
+<h5>Main Page</h5>
+<p>Card layout, right corner suggestion button, left corner name(clickable)-createdDate-whoCreated-edited, down hidden comments, row/button to open it down</p>
+<p>Floating Add new button at the Bottom-Left corner</p>
+<h5>Add Pasta</h5>
+<h5>Register-Login</h5>
+<h5>Admin</h5>
+<h5>Report bug/suggest correction</h5>
+
+`Tools: Highlight.js, Bootstrap.css, Material Icons, Nes.Css, Sweetalert2, React.js(based on time)`
 ### SQL-db
 <table>
     <tr>
