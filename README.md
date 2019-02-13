@@ -22,7 +22,15 @@
 
 ### React/vanilla-frontend
 **`Note: React just optional beacuse of the time`**
+<h4>MAIN CONCEPT</h4>
+<ul>
+    <li>Dark theme: dark/gray/black bg-s popups etc.</li>
+    <li>Use as much nes.css as I can, but keep it readable.</li>
+    <li>Make it as userfriendly as I can, maybe use tiling card layout over scrolling.</li>
+    <li><a href="https://github.com/thedaviddias/Front-End-Checklist">Follow this list</a></li>
+</ul>
 <h5>Main Page</h5>
+<p></p>
 <h5>Add Pasta</h5>
 <h5>Register-Login</h5>
 <h5>Admin</h5>
