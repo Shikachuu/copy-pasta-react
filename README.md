@@ -26,11 +26,13 @@
 <ul>
     <li>Dark theme: dark/gray/black bg-s popups etc.</li>
     <li>Use as much nes.css as I can, but keep it readable.</li>
-    <li>Make it as userfriendly as I can, maybe use tiling card layout over scrolling.</li>
+    <li>Make it as userfriendly as I can.</li>
+    <li>Navbar(dark w/logo) => Right: Search, Left: Home, Add, Register-Login, (hidden)Admin</li>
     <li><a href="https://github.com/thedaviddias/Front-End-Checklist">Follow this list</a></li>
 </ul>
 <h5>Main Page</h5>
-<p></p>
+<p>Card layout, right corner suggestion button, left corner name(clickable)-createdDate-whoCreated-edited, down hidden comments, row/button to open it down</p>
+<p>Floating Add new button at the Bottom-Left corner</p>
 <h5>Add Pasta</h5>
 <h5>Register-Login</h5>
 <h5>Admin</h5>
