@@ -3,20 +3,20 @@
     //$sdb = db::get();
     class Pasta
     {
-        private $allpasta = "";
+        private $allPasta;
         public function __construct(bool $isAdmin){
             if ($isAdmin) {
                 //SELECT * FROM pasta;
-                $allPasta = array("id"=>"1", "p_name"=>"Test", "p_created"=>"2018-11-03 16:34", "p_creator"=>"Guest", "p_content"=>"if(dögöljmeg) ? fasz: geci;");
+                $this->allPasta = array("id", "p_name", "p_created", "p_creator", "p_content" =>"1", "Test", "2018-11-03 16:34", "Guest","if(dögöljmeg) ? fasz: geci;");
             }
             else {
                 //SELECT * FROM pasta WHERE isPrivate==0;
-                $allPasta = array("id"=>"1", "p_name"=>"Test", "p_created"=>"2018-11-03 16:34", "p_creator"=>"Guest", "p_content"=>"if(dögöljmeg) ? fasz: geci;");
+                $this->allPasta = array("id", "p_name", "p_created", "p_creator", "p_content"=>"1", "Test", "2018-11-03 16:34", "Guest","if(dögöljmeg) ? fasz: geci;");
             }
         }
         public function GetPasta()
         {
-            return $allPasta;
+            return $this->allPasta;
         }
         public function GetComments(string $pid)
         {

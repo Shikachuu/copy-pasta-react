@@ -24,8 +24,20 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    
     <link rel="stylesheet" type="text/css" media="screen" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/nes.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/atom-one-dark.css">
+
 </head>
-<body>
+<body class="grey darken-3">
+    <nav class="teal darken-3">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo material-icons">local_cafe</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#"><span class="material-icons" style="font-size:14px;">view_headline</span> Public Pasta</a></li>
+            <li><a href="#"><span class="material-icons" style="font-size:14px;">playlist_add</span> Add Pasta</a></li>
+            <li><a href="#"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>
+            <li><a href="#"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>
+            </ul>
+        </div>
+    </nav>
