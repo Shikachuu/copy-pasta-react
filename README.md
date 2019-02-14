@@ -43,24 +43,23 @@
 <table>
     <tr>
         <th>users</th>
-        <th>user_pasta</th>
-        <th>guest_pasta</th>
         <th>comments</th>
         <th>suggestions</th>
     </tr>
     <tr>
         <td>user_id</td>
-        <td>u_pasta_id</td>
-        <td>g_pasta_id</td>
         <td>comment_id</td>
         <td>suggest_id</td>
     </tr>
     <tr>
         <td>username</td>
-        <td>u_pasta_name</td>
-        <td>g_pasta_name</td>
         <td>user_id(foregin key)</td>
-        <td>suggest_id</td>
+        <td>pasta_id</td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td>comment_content</td>
+        <td>suggest_content</td>
     </tr>
 </table>
 
