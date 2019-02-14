@@ -5,10 +5,6 @@
 
 ## PLANS
 ### PHP-backend
-<h5>Main Page</h5>
-<p>List the posts from guest_pasta and public posts from user_pasta, list comments</p>
-<h5>Add Pasta</h5>
-<p>Give the values from the fields to the controller, the controller is includes them to the db.</p>
 <h5>Register-Login</h5>
 <p>It's only one page, register is create a new user.</p>
 <p>Login log you in into an existing user and put the values to a cookie/session. [just the username]</p>
@@ -65,6 +61,11 @@
 
 ## IN-PROGRESS
 ### backend
+<h5>Main Page</h5>
+<p>List the posts from guest_pasta and public posts from user_pasta, list comments</p>
+<h5>Add Pasta</h5>
+<p>Give the values from the fields to the controller, the controller is includes them to the db.</p>
+
 ### frontend
 ### db
 
