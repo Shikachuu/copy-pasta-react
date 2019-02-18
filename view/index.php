@@ -26,6 +26,6 @@
         <a class="btn-floating btn-large waves-effect waves-teals teal darken-3"><i class="material-icons">add</i></a>
 </div>
 <div class="fixed-action-btn hide-on-large-only">
-        <a href="" class="btn-floating waves-effect waves-teals teal darken-3"><i class="material-icons">add</i></a>
+        <a class="btn-floating waves-effect waves-teals teal darken-3"><i class="material-icons">add</i></a>
 </div>
 <?php include('footer.php'); ?>
