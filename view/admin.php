@@ -2,7 +2,7 @@
 <div class="container">
     <?php
         include_once ('../model/mindex.php');
-        $pastaC = new Pasta(false);
+        $pastaC = new Pasta(true);
         $pastas = $pastaC->GetPasta();
         foreach ($pastas as $pasta) {
     ?>

@@ -28,6 +28,7 @@
     </footer>
     <script src="js/materialize.min.js"></script>
     <script src="js/highlight.pack.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.fixed-action-btn');

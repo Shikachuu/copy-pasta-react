@@ -21,9 +21,6 @@
             $pcontent = $p_content;
             $p_password = $ppassword;
         }
-        private function insertPaste(){
-
-        }
     }
     
 ?>
