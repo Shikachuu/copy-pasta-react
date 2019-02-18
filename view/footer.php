@@ -1,6 +1,3 @@
-    <div class="fixed-action-button">
-        <a class="btn-floating btn-large waves-effect waves-teal teal darken-3"><i class="material-icons">add</i></a>
-    </div>
     <footer class="page-footer teal darken-3">
         <div class="container">
             <div class="row">
@@ -31,5 +28,10 @@
     </footer>
     <script src="js/materialize.min.js"></script>
     <script src="js/highlight.pack.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+        });
+    </script>
 </body>
 </html>
