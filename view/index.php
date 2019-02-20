@@ -23,9 +23,10 @@
     ?>
 </div>
 <div class="fixed-action-btn hide-on-med-and-down">
-        <a class="btn-floating btn-large waves-effect waves-teals teal darken-3"><i class="material-icons">add</i></a>
+        <a onclick="addNewPasta()" class="btn-floating btn-large waves-effect waves-teals teal darken-3"><i class="material-icons">add</i></a>
 </div>
 <div class="fixed-action-btn hide-on-large-only">
-        <a class="btn-floating waves-effect waves-teals teal darken-3"><i class="material-icons">add</i></a>
+        <a onclick="addNewPasta()" class="btn-floating waves-effect waves-teals teal darken-3"><i class="material-icons">add</i></a>
 </div>
+<?php include('addpasta.php') ?>
 <?php include('footer.php'); ?>
