@@ -1,6 +1,5 @@
 <?php
-    $connection = new MongoClient();
-    $pasta = $connection->selectDB('copypasta');
-    var_dump($connection);
-    var_dump($pasta);
+    require_once 'auroloader.php';
+    $mongoDB = (new src\Client)->pasta;
+    var_dump($mongoDB);
 ?>

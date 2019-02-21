@@ -1,8 +1,12 @@
-FROM alpine
-RUN apk update
-RUN apk add apache2 mysql mysql-client php7 php7-common php7-curl mongodb php7-pecl-mongodb
-RUN apk upgrade
-RUN rm -r /var/www
-RUN mkdir /var/www
-ADD . /var/www/html
+FROM php:7.2.9-fpm-alpine
+
+# Install dependencies
+RUN apk --no-cache update \
+	&& add mysql mongodb
+
+# Add project
+ADD . /app
+
+
+
 EXPOSE 80
