@@ -1,0 +1,54 @@
+version: "3.6"
+
+networks:
+  internal:
+
+volumes:
+  mysql:
+  mongodb:
+
+services:
+
+  app:
+    image: copypasta:dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - internal
+    depends_on:
+      - mongo
+      - mysql
+    volumes:
+      # For development purposes only!
+      - ./view:/app/view:ro
+      - ./model:/app/model:ro
+      - ./controller:/app/controller:ro
+
+  http:
+    image: nginx
+    networks:
+      - internal
+    ports:
+      - 9000:80
+    depends_on:
+      - app
+    volumes:
+      - ./manifest/nginx/app.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./view:/app/view
+
+  mysql:
+    image: mysql:5.7
+    networks:
+      - internal
+    env_file:
+      - .env
+    volumes:
+      - mysql:/var/lib/mysql
+
+  mongo:
+    image: mongo
+    networks:
+      - internal
+    volumes:
+      - mongodb:/data/db
