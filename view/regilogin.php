@@ -13,7 +13,7 @@
                     <label for="lpass">Password</label>
                 </div>
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Login<i class="material-icons right">how_to_reg</i></button>
+            <button class="btn blue darken-2 waves-effect waves-light" type="submit" name="action">Login<i class="material-icons right">how_to_reg</i></button>
         </form>
         <h2 class="center-align white-text">Register</h2>
         <form action="mregi.php" method="post">
@@ -35,7 +35,7 @@
                     <label for="rpassag">Verify Password</label>
                 </div>
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Register<i class="material-icons right">person_add</i></button>
+            <button class="btn blue darken-2 waves-effect waves-light" type="submit" name="action">Register<i class="material-icons right">person_add</i></button>
         </form>
     </div>
     <br>

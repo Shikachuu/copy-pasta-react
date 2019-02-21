@@ -5,4 +5,4 @@ RUN apk upgrade
 RUN rm -r /var/www
 RUN mkdir /var/www
 ADD . /var/www/html
-EXPOSE 8080
+EXPOSE 80

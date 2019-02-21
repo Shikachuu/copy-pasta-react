@@ -1,13 +1,17 @@
 <script>
 function addNewPasta() {
     Swal.mixin({
-        confirmButtonText: 'Next <i class="material-icons">send</i>',
+        confirmButtonText: 'Next <i class="material-icons" style="font-size:12px">send</i>',
         showCancelButton: true,
         progressSteps: ['1','2','3','4']
     }).queue([
         {
             title: 'How do you want to name your pasta?',
             input: 'text',
+            inputAttributes: {
+                maxlength: 64,
+                autocapitalize: 'off'
+            }
         },
         {
             title: 'Let me paste it!',
@@ -18,6 +22,7 @@ function addNewPasta() {
             input: 'password',
             inputAttributes: {
                 minlength: 8,
+                maxlength: 64,
                 autocapitalize: 'off',
                 autocorrect: 'off'
             }

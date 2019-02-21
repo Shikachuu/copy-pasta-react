@@ -30,7 +30,7 @@
 
 </head>
 <body class="grey darken-3">
-    <nav class="teal darken-3">
+    <nav class="blue darken-2">
         <div class="nav-wrapper">
             <a href="index.php" class="brand-logo">Copy Pasta</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
