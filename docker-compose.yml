@@ -42,10 +42,10 @@ services:
     networks:
       - internal
     environment:
-      - MYSQL_ROOT_PASSWORD: $uper$ecreT11
-      - MYSQL_DATABASE: copypasta
-      - MYSQL_USER: phpcontainer
-      - MYSQL_PASSWORD: thisi$a$ecret11
+       MYSQL_ROOT_PASSWORD: 1secret1
+       MYSQL_DATABASE: copypasta
+       MYSQL_USER: phpcontainer
+       MYSQL_PASSWORD: thisIsASecretPassword
     volumes:
       - mysql:/var/lib/mysql
 
@@ -53,5 +53,8 @@ services:
     image: mongo
     networks:
       - internal
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: thisIsASecretPassword
     volumes:
       - mongodb:/data/db
