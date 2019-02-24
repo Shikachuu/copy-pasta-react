@@ -41,8 +41,11 @@ services:
     image: mysql:5.7
     networks:
       - internal
-    env_file:
-      - .env
+    environment:
+      - MYSQL_ROOT_PASSWORD: $uper$ecreT11
+      - MYSQL_DATABASE: copypasta
+      - MYSQL_USER: phpcontainer
+      - MYSQL_PASSWORD: thisi$a$ecret11
     volumes:
       - mysql:/var/lib/mysql
 
