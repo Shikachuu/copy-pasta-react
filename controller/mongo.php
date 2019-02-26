@@ -4,7 +4,6 @@
         private static $host = "localhost:27017";
         private static $database = "copypasta";
         private static $connection = "";
-        private $query = new MongoDB\Driver\Query([]);
         public function __construct(){
             $this->connection = new MongoDB\Driver\Manager("mongodb://".self::$host);
         }
@@ -15,11 +14,31 @@
             return self::$instance;
         }
         public function getAllTableContent($tableName){
-            $rows = $connection->executeQuery($database.$tableName, $query);
+            $query = new MongoDB\Driver\Query([]);
+            $rows = $this->connection->executeQuery($this->database.'.'.$tableName, $query);
             return $rows;
+        }
+        public function getFilteredContent($tableName,$filter)
+        {
+            $query = new MongoDB\Driver\Query($filter);
+            $rows = $this->connection->executeQuery($this->database.'.'.$tableName, $query);
+            return $rows;
+        }
+        public function insertObject($tableName,$object)
+        {
+            $bulk = new MongoDB\Driver\BulkWrite;
+            $bulk->insert($object);
+            $this->connection->executeBulkWrite($this->database.'.'.$tableName,$bulk);
+        }
+        public function deleteObject($tableName,$deleteID)
+        {
+            $bulk = new MongoDB\Driver\BulkWrite;
+            $bulk->delete(['_id' => $deleteID]);
+            $this->connection->executeBulkWrite($this->database.'.'.$tableName,$bulk);
         }
     }
     
+    /*
     $mongoDB = new MongoDB\Driver\Manager("mongodb://localhost:27017");
     //var_dump($mongoDB);
     $query = new MongoDB\Driver\Query([]);
@@ -29,4 +48,5 @@
     foreach ($rows as $row) {
         echo "$row->_id $row->pasta_name : $row->pasta_content\n";
     }
+    */
 ?>
