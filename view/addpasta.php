@@ -1,3 +1,4 @@
+<script src="js/md5.js"></script>
 <script>
 function addNewPasta() {
     Swal.mixin({
@@ -43,7 +44,14 @@ function addNewPasta() {
                 html:'Your pasta have been submited!',
                 confirmButtonText: 'Sweet!',
             });
-            console.log(JSON.stringify(result.value));
+            let dummy = {};
+            for(index in result.value){
+                dummy["pasta_name"] = result.value[0];
+                dummy["pasta_content"] = result.value[1];
+                dummy["password"] = md5(result.value[2]);
+                dummy["language"] = result.value[3];
+            }
+            console.log(JSON.stringify(dummy));
         }
     });
 }

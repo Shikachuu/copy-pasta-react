@@ -35,17 +35,15 @@
             <a href="index.php" class="brand-logo">Copy Pasta</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.php"><span class="material-icons" style="font-size:14px;">view_headline</span> Public Pasta</a></li>
-                <li><a href="#"><span class="material-icons" style="font-size:14px;">playlist_add</span> Add Pasta</a></li>
                 <li><a href="regilogin.php"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>
                 <li><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>
             </ul>
             <ul id="nav-mobile" class="hide-on-large-only">
                 <div class="left">
                     <li class="nav-content"><a href="index.php"><span class="material-icons" style="font-size:14px;">view_headline</span> Public Pasta</a></li>
-                    <li class="nav-content"><a href="#"><span class="material-icons" style="font-size:14px;">playlist_add</span> Add Pasta</a></li>
+                    <li class="nav-content"><a href="regilogin.php"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>
                 </div>
                 <div class="right">
-                    <li class="nav-content"><a href="regilogin.php"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>
                     <li class="nav-content"><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>
                 </div>
             </ul>

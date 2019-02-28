@@ -3,38 +3,40 @@
     {
         private static $host = "localhost:27017";
         private static $database = "copypasta";
-        private static $connection = "";
+        private $connection = "";
+        private static $instance = null;
         public function __construct(){
             $this->connection = new MongoDB\Driver\Manager("mongodb://".self::$host);
         }
         public static function get(){
             if (is_null(self::$instance)) {
-                self::$instance = new db;
+                self::$instance = new mongodb;
             }
+             //var_dump(self::$instance);
             return self::$instance;
         }
         public function getAllTableContent($tableName){
             $query = new MongoDB\Driver\Query([]);
-            $rows = $this->connection->executeQuery($this->database.'.'.$tableName, $query);
+            $rows = $this->connection->executeQuery(self::$database.'.'.$tableName, $query);
             return $rows;
         }
         public function getFilteredContent($tableName,$filter)
         {
             $query = new MongoDB\Driver\Query($filter);
-            $rows = $this->connection->executeQuery($this->database.'.'.$tableName, $query);
+            $rows = $this->connection->executeQuery(self::$database.'.'.$tableName, $query);
             return $rows;
         }
         public function insertObject($tableName,$object)
         {
             $bulk = new MongoDB\Driver\BulkWrite;
             $bulk->insert($object);
-            $this->connection->executeBulkWrite($this->database.'.'.$tableName,$bulk);
+            $this->connection->executeBulkWrite(self::$database.'.'.$tableName,$bulk);
         }
         public function deleteObject($tableName,$deleteID)
         {
             $bulk = new MongoDB\Driver\BulkWrite;
             $bulk->delete(['_id' => $deleteID]);
-            $this->connection->executeBulkWrite($this->database.'.'.$tableName,$bulk);
+            $this->connection->executeBulkWrite(self::$database.'.'.$tableName,$bulk);
         }
     }
     
