@@ -13,8 +13,8 @@
                     <h5 class="white-text">Powered by:</h5>
                     <ul>
                         <li>Mysql 5.1</li>
-                        <li>PHP 7.3</li>
-                        <li>MongoDB 7.3</li>
+                        <li>PHP 7.2</li>
+                        <li>MongoDB 4.0.6</li>
                         <li>Apache 2.3</li>
                     </ul>
                 </div>

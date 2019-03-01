@@ -24,13 +24,14 @@ services:
       - ./view:/app/view:ro
       - ./model:/app/model:ro
       - ./controller:/app/controller:ro
+      #- ./manifest/php/mongodb.so:/usr/local/lib/php/extensions/no-debug-non-zts-20170718/
 
   http:
     image: nginx
     networks:
       - internal
     ports:
-      - 9000:80
+      - 8000:80
     depends_on:
       - app
     volumes:
