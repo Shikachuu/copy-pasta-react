@@ -24,7 +24,6 @@ services:
       - ./view:/app/view:ro
       - ./model:/app/model:ro
       - ./controller:/app/controller:ro
-      #- ./manifest/php/mongodb.so:/usr/local/lib/php/extensions/no-debug-non-zts-20170718/
 
   http:
     image: nginx
@@ -49,6 +48,7 @@ services:
        MYSQL_PASSWORD: thisIsASecretPassword
     volumes:
       - mysql:/var/lib/mysql
+      - ./db:/docker-entrypoint-initdb.d:ro
 
   mongo:
     image: mongo
@@ -57,5 +57,6 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: thisIsASecretPassword
+      MONGO_INITDB_DATABASE: copypasta
     volumes:
       - mongodb:/data/db
