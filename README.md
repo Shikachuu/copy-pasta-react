@@ -9,11 +9,13 @@
 <p>User add pasta</p>
 <p>User profile management</p>
 <p>Comments</p>
+
 ### VIEW
 <p>Create userprofile</p>
 <p>Create different add for users</p>
 <p>Comments</p>
 <p>Write 404</p>
+
 ### CONTROLLER
 <p>Debug addpasta</p>
 ## IN-PROGRESS
@@ -21,6 +23,7 @@
 ### VIEW
 ### CONTROLLER
 <p>Create user controller</p>
+
 ## DOCKER
 <p>Solve the mongoDB-php driver problem</p>
 <p>Create mongoDB tables on startup</p>

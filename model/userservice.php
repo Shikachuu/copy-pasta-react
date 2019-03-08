@@ -20,21 +20,21 @@
                     $this->password = md5($this->mysqldb->escape($password));
                     $valid = true;
                 }else {
-                    $this->errorMSG += " The password must be atleast 8 char long.";
+                    $this->errorMSG = " The password must be atleast 8 char long.";
                 }
             }else {
-                $this->errorMSG += " You should fill all the fields.";
+                $this->errorMSG = " You should fill all the fields.";
             }
             return $valid;
         }
         // NOTE: separated cause of the login
         private function validateMail($email)
         {
-            if (strpos($email,"@") && strpos($email,".")) {
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $this->email = $this->mysqldb->escape($email);
                 return true;
             }else {
-                $this->errorMSG += " The email address isn't valid.";
+                $this->errorMSG = " The email address isn't valid.";
                 return false;
             }
         }
@@ -42,10 +42,10 @@
         private function isUserExist()
         {
             if ($this->mysqldb->numrows("SELECT * FROM users WHERE username=".$this->username)>0) {
-                $this->errorMSG += " The user is already exist.";
+                $this->errorMSG = " The user is already exist.";
                 return true;
             }else{
-                $this->errorMSG += " The user doesn't exist.";
+                $this->errorMSG = " The user doesn't exist.";
                 return false;
             }
         }
@@ -93,7 +93,7 @@
             if (isset($_SESSION["user_id"])&&isset($_SESSION["username"])) {
                 session_unset();
                 session_destroy();
-                return "You log out successfully.";
+                return "You logged out successfully.";
             }else {
                 $this->errorMSG = "You have to log in first.";
                 return $this->errorMSG;

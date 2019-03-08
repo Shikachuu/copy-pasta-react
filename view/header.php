@@ -27,12 +27,13 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/atom-one-dark.css">
+    <link rel="stylesheet" href="css/loading.css">
 
 </head>
 <body class="grey darken-3">
     <nav class="blue darken-2">
         <div class="nav-wrapper">
-            <a href="index.php" class="brand-logo">Copy Pasta</a>
+            <a href="index.php" class="brand-logo">{ Copy Pasta }</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.php"><span class="material-icons" style="font-size:14px;">view_headline</span> Public Pasta</a></li>
                 <li><a href="regilogin.php"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>
