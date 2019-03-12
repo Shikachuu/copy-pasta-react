@@ -57,7 +57,7 @@ class db
     {
         return mysqli_insert_id($this->connection);
     }
-    public function numnrows($queryString)
+    public function numrows($queryString)
     { //sorok számát adja vissza
         $result = $this->query($queryString);
         return mysqli_num_rows($result);
