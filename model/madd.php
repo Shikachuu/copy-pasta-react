@@ -23,13 +23,14 @@
                     if (strlen($this->inCont)>4) {
                         $isVerified = true;
                     }else {
-                        $this->errorMsg += "Error Processing Request, The Password Is Too Short";
+                        $this->errorMsg = "Error Processing Request, The Password Is Too Short";
                     }
                 }else {
-                    $this->errorMsg += "Error Processing Request, The Password Is Too Short";
+                    $this->errorMsg = "Error Processing Request, The Password Is Too Short";
                 }
             }else {
-                $this->errorMsg += "Error Processing Request, The User Name Is Too Short Or Too Long";
+                $this->errorMsg = "Error Processing Request, The User Name Is Too Short Or Too Long";
+                var_dump($this->inName);
             }
             return $isVerified;
         }

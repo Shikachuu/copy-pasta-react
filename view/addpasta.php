@@ -65,25 +65,6 @@ function addNewPasta() {
                 dummy["language"] = result.value[3];
                 dummy["is_private"] = result.value[4];
             }
-            $.ajax("../controller/addpastac.php", {
-                method: 'POST',
-                data: {
-                    pasta_name: dummy["pasta_name"],
-                    pasta_content: dummy["pasta_content"],
-                    password: dummy["password"],
-                    language: dummy["language"],
-                    is_private: dummy["is_private"]
-                }
-            })
-            .then(
-                function success(data) {
-                    console.log(data);
-                },
-
-                function fail(data, status) {
-                    alert('Request failed.  Returned status of ' + status);
-                }
-            );
         }
     });
 }

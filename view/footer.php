@@ -15,7 +15,7 @@
                         <li>Mysql 5.1</li>
                         <li>PHP 7.2</li>
                         <li>MongoDB 4.0.6</li>
-                        <li>Apache 2.3</li>
+                        <li>Nginx 1.15.8</li>
                     </ul>
                 </div>
             </div>

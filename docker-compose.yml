@@ -55,8 +55,6 @@ services:
     networks:
       - internal
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: thisIsASecretPassword
       MONGO_INITDB_DATABASE: copypasta
     volumes:
       - mongodb:/data/db

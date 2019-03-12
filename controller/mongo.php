@@ -16,27 +16,43 @@
             return self::$instance;
         }
         public function getAllTableContent($tableName){
-            $query = new MongoDB\Driver\Query([]);
-            $rows = $this->connection->executeQuery(self::$database.'.'.$tableName, $query);
-            return $rows;
+            try {
+                $query = new MongoDB\Driver\Query([]);
+                $rows = $this->connection->executeQuery(self::$database.'.'.$tableName, $query);
+                return $rows;
+            } catch (MongoDB\Driver\Exception\Exception $e) {
+                throw $e;
+            }
         }
         public function getFilteredContent($tableName,$filter)
         {
-            $query = new MongoDB\Driver\Query($filter);
-            $rows = $this->connection->executeQuery(self::$database.'.'.$tableName, $query);
+            try {
+                $query = new MongoDB\Driver\Query($filter);
+                $rows = $this->connection->executeQuery(self::$database.'.'.$tableName, $query);
             return $rows;
+            } catch (MongoDB\Driver\Exception\Exception $e) {
+                throw $e;
+            }
         }
         public function insertObject($tableName,$object)
         {
-            $bulk = new MongoDB\Driver\BulkWrite;
+            try {
+                $bulk = new MongoDB\Driver\BulkWrite;
             $bulk->insert($object);
             $this->connection->executeBulkWrite(self::$database.'.'.$tableName,$bulk);
+            } catch (MongoDB\Driver\Exception\Exception $e) {
+                throw $e;
+            }
         }
         public function deleteObject($tableName,$deleteID)
         {
-            $bulk = new MongoDB\Driver\BulkWrite;
-            $bulk->delete(['_id' => $deleteID]);
-            $this->connection->executeBulkWrite(self::$database.'.'.$tableName,$bulk);
+            try {
+                $bulk = new MongoDB\Driver\BulkWrite;
+                $bulk->delete(['_id' => $deleteID]);
+                $this->connection->executeBulkWrite(self::$database.'.'.$tableName,$bulk);
+            } catch (MongoDB\Driver\Exception\Exception $e) {
+                throw $e;
+            }
         }
     }
     
