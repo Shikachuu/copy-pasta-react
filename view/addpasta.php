@@ -1,4 +1,5 @@
 <script src="js/md5.js"></script>
+<?php if (!isset($_SESSION["username"])) { ?>
 <script>
 function addNewPasta() {
     Swal.mixin({
@@ -87,3 +88,5 @@ function addNewPasta() {
     });
 }
 </script>
+<?php }else{ ?>
+<?php } ?>
