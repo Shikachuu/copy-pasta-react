@@ -2,7 +2,7 @@
 <div class="container">
     <div class="col l5 s12">
         <h2 class="center-align white-text">Login</h2>
-        <form action="user.php" method="post" >
+        <form action="user.php" method="post" class="fadeInDown">
             <div class="row">
                 <div class="input-field col l5 s6">
                     <input id="luser" type="text" class="validate">
@@ -16,7 +16,7 @@
             <button class="btn blue darken-2 waves-effect waves-light" type="submit" name="login">Login<i class="material-icons right">how_to_reg</i></button>
         </form>
         <h2 class="center-align white-text">Register</h2>
-        <form action="user.php" method="post">
+        <form action="user.php" method="post" class="fadeInDown">
             <div class="row">
                 <div class="input-field col l5 s6">
                     <input type="text" name="ruser" id="ruser" class="validate">
