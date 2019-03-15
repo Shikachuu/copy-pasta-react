@@ -66,7 +66,7 @@ function addNewPasta() {
                 dummy["is_private"] = result.value[4];
             }
             let req = new XMLHttpRequest();
-            req.open('POST', '/controller/addpastac.php', true);
+            req.open('POST', '/controller/gaddpastac.php', true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
             req.send(encodeURI(dummy["pasta_name"], dummy["pasta_content"], dummy["password"],dummy["language"],dummy["is_private"]));
         }
@@ -127,13 +127,13 @@ function addNewPasta() {
                 dummy["pasta_content"] = result.value[1];
                 dummy["language"] = result.value[3];
                 dummy["is_private"] = result.value[4];
-                //insert session storage here userid + username
-                //https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+                <?php echo 'dummy["username"] ='.json_encode($_SESSION['username'].";"); ?>
+                <?php echo 'dummy["user_id"] ='.json_encode($_SESSION['username'].";"); ?>
             }
             let req = new XMLHttpRequest();
-            req.open('POST', '/controller/addpastac.php', true);
+            req.open('POST', '/controller/uaddpastac.php', true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-            req.send(encodeURI(dummy["pasta_name"], dummy["pasta_content"],dummy["language"],dummy["is_private"]));
+            req.send(encodeURI(dummy["pasta_name"], dummy["pasta_content"],dummy["language"],dummy["is_private"],dummy["username"],dummy["user_id"]));
         }
     });
 }
