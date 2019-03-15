@@ -35,7 +35,7 @@
 <body class="grey darken-3">
     <nav class="blue darken-2 fadeInDown">
         <div class="nav-wrapper">
-            <a href="index.php" class="brand-logo">{ Copy Pasta }</a>
+            <a href="index.php" class="brand-logo"> { Copy Pasta }</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.php"><span class="material-icons" style="font-size:14px;">view_headline</span> Public Pasta</a></li>
                 <?php echo (!isset($_SESSION["username"]))? '<li class="nav-content"><a href="regilogin.php"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>' : '<li class="nav-content"><a href="profile.php"><span class="material-icons" style="font-size:14px;">assignment_ind</span> Profile</a></li>'; ?>
