@@ -55,7 +55,7 @@
             if ($this->validate($rusername,$rpassword) && $this->validateMail($remail)) {
                 if ($this->isUserExist() === false) {
                     if ($this->password == md5($rpasswordag)) {
-                        $this->mysqldb->query("INSERT INTO users (`username`, `password`,`email`) VALUES ($this->username,$this->password,$this->email)");
+                        $this->mysqldb->query("INSERT INTO users (`username`, `password`,`email`) VALUES ('$this->username','$this->password','$this->email')");
                         $_SESSION["user_id"] = $this->mysqldb->insert_id();
                         $_SESSION["username"] = $this->username;
                         return "The registration was successful. You have been automaticaly logged in.";
