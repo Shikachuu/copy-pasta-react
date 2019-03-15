@@ -39,7 +39,7 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.php"><span class="material-icons" style="font-size:14px;">view_headline</span> Public Pasta</a></li>
                 <?php echo (!isset($_SESSION["username"]))? '<li class="nav-content"><a href="regilogin.php"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>' : '<li class="nav-content"><a href="profile.php"><span class="material-icons" style="font-size:14px;">assignment_ind</span> Profile</a></li>'; ?>
-                <?php echo (!isset($_SESSION["admin"])) ? '<li class="nav-content"><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>' : '' ?>
+                <?php echo (isset($_SESSION["admin"])) ? '<li class="nav-content"><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>' : '' ?>
             </ul>
             <ul id="nav-mobile" class="hide-on-large-only">
                 <div class="left">
@@ -47,7 +47,7 @@
                     <?php echo (!isset($_SESSION["username"]))? '<li class="nav-content"><a href="regilogin.php"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>' : '<li class="nav-content"><a href="profile.php"><span class="material-icons" style="font-size:14px;">assignment_ind</span> Profile</a></li>'; ?>
                 </div>
                 <div class="right">
-                    <?php echo (!isset($_SESSION["admin"])) ? '<li class="nav-content"><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>' : '' ?>
+                    <?php echo (isset($_SESSION["admin"])) ? '<li class="nav-content"><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>' : '' ?>
                 </div>
             </ul>
         </div>
