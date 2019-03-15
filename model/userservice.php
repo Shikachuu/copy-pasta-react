@@ -41,7 +41,7 @@
         // NOTE: always run validaate before isUserExist!!
         private function isUserExist()
         {
-            if ($this->mysqldb->numrows("SELECT * FROM users WHERE username=".$this->username)>0) {
+            if ($this->mysqldb->numrows("SELECT * FROM users WHERE username='".$this->username."'")>0) {
                 $this->errorMSG = " The user is already exist.";
                 return true;
             }else{
