@@ -55,16 +55,4 @@
             }
         }
     }
-    
-    /*
-    $mongoDB = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-    //var_dump($mongoDB);
-    $query = new MongoDB\Driver\Query([]);
-    $rows = $mongoDB->executeQuery("copypasta.pasta",$query);
-    $aMemberships = array('_id', 'pasta_name', 'pasta_content', 'created_at', 'edited_at', 'language', 'user_name');
-
-    foreach ($rows as $row) {
-        echo "$row->_id $row->pasta_name : $row->pasta_content\n";
-    }
-    */
 ?>

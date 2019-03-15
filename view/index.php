@@ -4,7 +4,6 @@
         include_once ('../model/mindex.php');
         $pastaC = new Pasta(false);
         $pastas = $pastaC->GetPasta();
-        //var_dump($pastas);
         foreach ($pastas as $pasta) {
     ?>
         <div class="card large hoverable blue darken-2 flipInY">
