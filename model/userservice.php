@@ -1,6 +1,6 @@
 <?php
     class UserService{
-        private $username;
+        public $username;
         private $password;
         private $email;
         private $mysqldb;
@@ -39,7 +39,7 @@
             }
         }
         // NOTE: always run validaate before isUserExist!!
-        private function isUserExist()
+        public function isUserExist()
         {
             if ($this->mysqldb->numrows("SELECT * FROM users WHERE username='".$this->username."'")>0) {
                 $this->errorMSG = " The user is already exist.";
