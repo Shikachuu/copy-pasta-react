@@ -1,5 +1,5 @@
 <?php include('header.php'); ?>
-<div class="container">
+<div class="container" style="height: 90vh; max-height:auto">
     <?php
         include_once ('../model/mindex.php');
         $pastaC = new Pasta(false);
