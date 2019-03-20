@@ -21,10 +21,10 @@
     ?>
 </div>
 <div class="fixed-action-btn hide-on-med-and-down bounceIn">
-    <a onclick="addNewPasta()" class="btn-floating btn-large waves-effect waves-blue blue darken-2"><i class="material-icons">add</i></a>
+    <a href="#addmodal" class="btn-floating btn-large waves-effect waves-blue blue darken-2 modal-trigger"><i class="material-icons">add</i></a>
 </div>
 <div class="fixed-action-btn hide-on-large-only bounceIn">
-    <a onclick="addNewPasta()" class="btn-floating waves-effect waves-blue blue darken-2"><i class="material-icons">add</i></a>
+    <a href="#addmodal" class="btn-floating waves-effect waves-blue blue darken-2 modal-trigger"><i class="material-icons">add</i></a>
 </div>
 <?php include('addpasta.php') ?>
 <?php include('footer.php'); ?>
