@@ -48,7 +48,7 @@ services:
        MYSQL_PASSWORD: thisIsASecretPassword
     volumes:
       - mysql:/var/lib/mysql
-      - ./db:/docker-entrypoint-initdb.d:ro
+      - ./db:/docker-entrypoint-initdb.d/:ro
 
   mongo:
     image: mongo

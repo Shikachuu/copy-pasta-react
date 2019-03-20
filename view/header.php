@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if (isset($_POST['logout'])) {
+    include_once("../model/userservice.php");
+    $userHandling = new UserService();
+    $userHandling.logout();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +53,7 @@
                     <?php echo (!isset($_SESSION["username"]))? '<li class="nav-content"><a href="regilogin.php"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>' : '<li class="nav-content"><a href="profile.php"><span class="material-icons" style="font-size:14px;">assignment_ind</span> Profile</a></li>'; ?>
                 </div>
                 <div class="right">
-                    <?php echo (isset($_SESSION["admin"])) ? '<li class="nav-content"><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>' : '<li class="nav-content"><button><span class="material-icons" style="font-size:14px;">directions_run</span> Log out</button></li>' ?>
+                    <?php echo (isset($_SESSION["admin"])) ? '<li class="nav-content"><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>' : '<li class="nav-content"><button type="submit" name="logout"><span class="material-icons" style="font-size:14px;">directions_run</span> Log out</button></li>' ?>
                 </div>
             </ul>
         </div>
