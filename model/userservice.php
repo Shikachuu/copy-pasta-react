@@ -71,7 +71,8 @@
         {
             if ($this->validate($lusername,$lpassword)) {
                 if ($this->isUserExist() === true) {
-                    $dummy = $this->mysqldb->query("SELECT * FROM users WHERE username=".$this->username);
+                    $dummy = $this->mysqldb->query("SELECT * FROM users WHERE username='".$this->username."'");
+                    var_dump($dummy);
                     if (password_verify($lpassword,$dummy["password"])) {
                         //session_start();
                         $_SESSION["user_id"] = $dummy["user_id"];

@@ -5,11 +5,11 @@
         <form action="user.php" method="post" >
             <div class="row">
                 <div class="input-field col l5 s6">
-                    <input id="luser" type="text" class="validate">
+                    <input id="luser" name="luser" type="text" class="validate">
                     <label for="luser">Username</label>
                 </div>
                 <div class="input-field col l5 s6">
-                    <input id="lpass" type="password" class="validate">
+                    <input id="lpass" name="lpass" type="password" class="validate">
                     <label for="lpass">Password</label>
                 </div>
             </div>
