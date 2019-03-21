@@ -6,8 +6,8 @@
         $suspectPasta = iterator_to_array($mdb->getFilteredContent("pasta",['_id'=> $id]))[0];
     }
     if (isset($_POST['deleteElement'])) {
-        $db->deleteObject("pasta",$_POST['deleteElement']);
-        header('Refresh:5; URL:index.php');
+        $mdb->deleteObject("pasta",$id);
+        header("refresh:3; url=index.php");
     }
     if (isset($_POST['suggestCorrection'])) {
         
@@ -21,12 +21,14 @@
 <div class="card blue darken-2">
     <div class="card-content text-white">
         <p class="card-title"><?php $suspectPasta->created_at;?></p>
-        <pre class="hljs <?php echo $suspectPasta->language; ?>"><code id="<?php echo $suspectPasta->id; ?>" onmdblclick="copyToClipboard(this.id)"><?php echo $suspectPasta->pasta_content; ?></code></pre>
+        <pre class="hljs <?php echo $suspectPasta->language; ?>"><code id="<?php echo $suspectPasta->_id; ?>" onmdblclick="copyToClipboard(this.id)"><?php echo $suspectPasta->pasta_content; ?></code></pre>
     </div>
     <div class="card-action blue darken-3 center-align">
         <p>Double click to copy the pasta</p>
-        <button name="suggestCorrection" class="btn blue darken-4"><i class="material-icons">create</i></button>
-        <button name="deleteElement" class="btn red accent-2"><i class="material-icons">delete_sweep</i></button>
+        <form method="post">
+            <button name="suggestCorrection" class="btn blue darken-4"><i class="material-icons">create</i></button>
+            <button name="deleteElement" class="btn red accent-2"><i class="material-icons">delete_sweep</i></button>
+        </form>
     </div>
 </div>
 </div>

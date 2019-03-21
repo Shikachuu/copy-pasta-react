@@ -26,6 +26,7 @@
             </div>
         </div>
     </footer>
+    <script src="copytoclipboard.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
