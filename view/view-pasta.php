@@ -3,7 +3,7 @@
     $mdb = mongodb::get();
     if (isset($_GET['id'])) {
         $id = new MongoDB\BSON\ObjectID($_GET['id']);
-        $suspectPasta = $mdb->getFilteredContent("pasta",['_id'=> $id]);
+        $suspectPasta = iterator_to_array($mdb->getFilteredContent("pasta",['_id'=> $id]));
         var_dump($suspectPasta);
     }
     if (isset($_POST['deleteElement'])) {
