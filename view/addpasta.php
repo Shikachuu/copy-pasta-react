@@ -41,8 +41,8 @@
                 <input type="password" name="password" id="password">
             </div>
             <div class="input-field">
-                <label for="language">What language do you used to create it?</label>
-                <select name="language" id="language">
+                <select name="language" id="language" style="display:inherit !important">
+                    <option value="plaintext">Choose language</option>
                     <option value="plaintext">Plain Text</option>
                     <option value="python">Python</option>
                     <option value="javascript">JavaScript</option>
@@ -50,7 +50,6 @@
                 </select>
             </div>
             <div class="input-field">
-                <label for="is_private">Is your pasta private?</label>
                 <div class="switch"><label>Public <input type="checkbox" name="is_private" value="1"><span class="lever"></span>Private</label></div>
             </div>
     </div>
