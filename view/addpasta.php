@@ -41,8 +41,8 @@
                 <input type="password" name="password" id="password">
             </div>
             <div class="input-field">
-                <label for="language">What language do you used to create it?</label>
-                <select name="language" id="language">
+                <select name="language" id="language" style="display:inherit !important">
+                    <option value="plaintext">Choose language</option>
                     <option value="plaintext">Plain Text</option>
                     <option value="python">Python</option>
                     <option value="javascript">JavaScript</option>
