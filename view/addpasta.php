@@ -53,9 +53,6 @@
 <?php }?>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script>
-const languages = listLanguages();
-console.log(languages);
-}
 $(document).ready(function(){
     $('.modal').modal();
 });
