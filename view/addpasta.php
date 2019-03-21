@@ -3,19 +3,25 @@
     <div class="modal-content">
         <h4 class="center-align text-white">Add pasta</h4>
         <form action="../controller/uaddpastac.php" method="post">
-            <label for="pasta_name">Name your Pasta</label>
-            <input type="text" name="pasta_name" id="pasta_name">
-            <label for="pasta_content">Paste it down <i class="material-icons">text_rotate_vertical</i></label>
-            <input type="textarea" name="pasta_content" id="pasta_content">
-            <label for="language">What language do you used to create it?</label>
-            <select name="language" id="language">
-                <option value="plaintext">Plain Text</option>
-                <option value="python">Python</option>
-                <option value="javascript">JavaScript</option>
-                <option value="php">PHP</option>
-            </select>
-            <label for="is_private">Is your pasta private?</label>
-            <input type="checkbox" name="is_private" id="is_private" value="1">
+            <div class="input-field">
+                <label for="pasta_name">Name your Pasta</label>
+                <input type="text" name="pasta_name" id="pasta_name">
+            </div>
+            <div class="input-field">
+                <label for="pasta_content">Paste it down</label>
+                <textarea class="materialize-textarea" name="pasta_content" id="pasta_content" cols="30" rows="10"></textarea>
+            </div>
+            <div class="input-field">
+                <select name="language" id="language"style="display:inherit !important">
+                    <option value="plaintext">Plain Text</option>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="php">PHP</option>
+                </select>
+            </div>
+            <div class="input-field">
+                <div class="switch"><label>Public <input type="checkbox" name="is_private" value="1"><span class="lever"></span>Private</label></div>
+            </div>
     </div>
     <div class="modal-footer">
         <button type="submit" class="btn blue darken-2">Send</button>
@@ -24,7 +30,7 @@
     </div>
 </div>
 <?php }else { ?>
-<div id="modal1" class="modal blue darken-3">
+<div id="modal1" class="modal">
     <div class="modal-content">
         <h4 class="center-align white-text">Add pasta</h4>
         <form action="../controller/gaddpastac.php" method="post">

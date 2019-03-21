@@ -7,7 +7,7 @@
         private $inLang;
         private $inIsPrivate;
         private $errorMsg;
-        public function __construct($name,$pass,$content,$lang,$ispriv)
+        public function __construct($name,$content,$pass,$lang,$ispriv)
         {
             $this->inName = $name;
             $this->inCont = $content;
@@ -39,12 +39,14 @@
             if ($this->Verify() === true) {
                 include_once('../controller/mongo.php');
                 $mdb = mongodb::get();
-                if ($this->inIsPrivate == "1") {
+                if ($this->inIsPrivate == 1) {
                     $priv = true;
                 }else {
                     $priv = false;
                 }
-                $insertAssocArr = ['_id' => new MongoDB\BSON\ObjectID,'pasta_name' => $this->inName,'pasta_content' => $this->inCont, 'created_at' => 'Date()', 'edited_at' => 'Date()', 'language' => $this->inLang, 'password' => $this->inPass, 'is_private' => $priv];
+                $now = new DateTime();
+                $nowmongo = new MongoDB\BSON\UTCDateTime($now->getTimestamp()*1000);
+                $insertAssocArr = ['_id' => new MongoDB\BSON\ObjectID,'pasta_name' => $this->inName,'pasta_content' => $this->inCont, 'created_at' => $nowmongo, 'edited_at' => $nowmongo, 'language' => $this->inLang, 'password' => $this->inPass, 'is_private' => $priv];
                 $mdb->insertObject("pasta", $insertAssocArr);
                 return "Your Pasta Has Been Submited. :)";
             }else {

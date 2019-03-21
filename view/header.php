@@ -1,8 +1,11 @@
 <?php session_start(); 
 if (isset($_POST['logout'])) {
-    include_once("../model/userservice.php");
-    $userHandling = new UserService();
-    $userHandling.logout();
+    if (isset($_SESSION["user_id"])&&isset($_SESSION["username"])) {
+        session_unset();
+        session_destroy();
+    }else {
+        header("Locaiton:index.php");
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -33,6 +36,7 @@ if (isset($_POST['logout'])) {
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" type="text/css" media="screen" href="css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/atom-one-dark.css">
     <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/animate.min.css">
@@ -46,7 +50,7 @@ if (isset($_POST['logout'])) {
                 <li><a href="index.php"><span class="material-icons" style="font-size:14px;">view_headline</span> Public Pasta</a></li>
                 <?php echo (!isset($_SESSION["username"]))? '<li class="nav-content"><a href="regilogin.php"><span class="material-icons" style="font-size:14px;">contacts</span> Register/Login</a></li>' : '<li class="nav-content"><a href="profile.php"><span class="material-icons" style="font-size:14px;">assignment_ind</span> Profile</a></li>'; ?>
                 <?php echo (isset($_SESSION["admin"])) ? '<li class="nav-content"><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>' : '' ?>
-                <?php echo (isset($_SESSION["username"]) && isset($_SESSION["user_id"])) ? '<li class="nav-content"><form method="POST"><button class="btn blue darken-4"><span class="material-icons" style="font-size:14px;">directions_run</span> Log out</button></form></li>' : '' ?>
+                <?php echo (isset($_SESSION["username"]) && isset($_SESSION["user_id"])) ? '<li class="nav-content"><form method="POST"><button class="btn blue darken-4" name="logout"><span class="material-icons" style="font-size:14px;">directions_run</span> Log out</button></form></li>' : '' ?>
             </ul>
             <ul id="nav-mobile" class="hide-on-large-only">
                 <div class="left">
@@ -55,7 +59,7 @@ if (isset($_POST['logout'])) {
                 </div>
                 <div class="right">
                     <?php echo (isset($_SESSION["admin"])) ? '<li class="nav-content"><a href="admin.php"><span class="material-icons" style="font-size:14px;">build</span> Admin View</a></li>' : '' ?>
-                    <?php echo (isset($_SESSION["username"]) && isset($_SESSION["user_id"])) ? '<li class="nav-content"><form method="POST"><button class="btn blue darken-4"><span class="material-icons" style="font-size:14px;">directions_run</span> Log out</button></form></li>' : '' ?>
+                    <?php echo (isset($_SESSION["username"]) && isset($_SESSION["user_id"])) ? '<li class="nav-content"><form method="POST"><button class="btn blue darken-4" name="logout"><span class="material-icons" style="font-size:14px;">directions_run</span> Log out</button></form></li>' : '' ?>
                 </div>
             </ul>
         </div>

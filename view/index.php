@@ -1,12 +1,12 @@
 <?php include('header.php'); ?>
-<div class="container" style="height: 90vh; max-height:auto">
+<div class="container">
     <?php
         include_once ('../model/mindex.php');
         $pastaC = new Pasta(false);
         $pastas = $pastaC->GetPasta();
         foreach ($pastas as $pasta) {
     ?>
-        <div class="card large hoverable blue darken-2 flipInY">
+        <div class="card large hoverable blue darken-2">
             <a style="display: block; margin: 0 auto; font-weight: bold; font-size: 20px;" class="white-text center-align" href="view-pasta.php?id=<?php echo $pasta->_id; ?>" class="card-title"><?php echo $pasta->pasta_name; ?></a>
             <pre style="height:90%" class="hljs <?php echo $pasta->language; ?>" onmdblclick="copyToClipboard(this.id)"><code><?php echo $pasta->pasta_content; ?></code></pre>
             <div class="card-action blue darken-3">

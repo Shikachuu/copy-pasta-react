@@ -22,12 +22,12 @@
             $isVerified = false;
             if((strlen($this->inName) > 4) && (strlen($this->inName) < 64)){
                 if (!empty($this->inUser) && !empty($this->inUserID)) {
+                    $isVerified = true;
                 }else {
                     $this->errorMsg = "Error getting the username, please log in first.";
                 }
             }else {
-                $this->errorMsg = "Error Processing Request, The User Name Is Too Short Or Too Long";
-                var_dump($this->inName);
+                $this->errorMsg = "Error Processing Request, The Pasta Name Is Too Short Or Too Long";
             }
             return $isVerified;
         }
@@ -36,12 +36,14 @@
             if ($this->Verify() === true) {
                 include_once('../controller/mongo.php');
                 $mdb = mongodb::get();
-                if ($this->inIsPrivate == "1") {
+                if ($this->inIsPrivate == 1) {
                     $priv = true;
                 }else {
                     $priv = false;
                 }
-                $insertAssocArr = ['_id' => new MongoDB\BSON\ObjectID,'pasta_name' => $this->inName,'pasta_content' => $this->inCont, 'created_at' => 'Date()', 'edited_at' => 'Date()', 'language' => $this->inLang, 'username' => $this->inUser, 'is_private' => $priv, 'user_id' => $this->inUserID];
+                $now = new DateTime();
+                $nowmongo = new MongoDB\BSON\UTCDateTime($now->getTimestamp()*1000);
+                $insertAssocArr = ['_id' => new MongoDB\BSON\ObjectID,'pasta_name' => $this->inName,'pasta_content' => $this->inCont, 'created_at' => $nowmongo, 'edited_at' => $nowmongo, 'language' => $this->inLang, 'username' => $this->inUser, 'is_private' => $priv, 'user_id' => $this->inUserID];
                 $mdb->insertObject("pasta", $insertAssocArr);
                 return "Your Pasta Has Been Submited. :)";
             }else {
