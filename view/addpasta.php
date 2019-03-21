@@ -33,7 +33,7 @@
                 <input type="text" name="pasta_name" id="pasta_name">
             </div>
             <div class="input-field">
-                <label for="pasta_content">Paste it down <i class="material-icons">text_rotate_vertical</i></label>
+                <label for="pasta_content">Paste it down</label>
                 <textarea class="materialize-textarea" name="pasta_content" id="pasta_content" cols="30" rows="10"></textarea>
             </div>
             <div class="input-field">
