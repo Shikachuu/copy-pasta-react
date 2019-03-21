@@ -39,7 +39,7 @@
             if ($this->Verify() === true) {
                 include_once('../controller/mongo.php');
                 $mdb = mongodb::get();
-                if ($this->inIsPrivate == 1) {
+                if ($this->inIsPrivate == "1") {
                     $priv = true;
                 }else {
                     $priv = false;
