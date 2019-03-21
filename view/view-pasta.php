@@ -3,8 +3,7 @@
     $mdb = mongodb::get();
     if (isset($_GET['id'])) {
         $id = new MongoDB\BSON\ObjectID($_GET['id']);
-        $suspectPasta = iterator_to_array($mdb->getFilteredContent("pasta",['_id'=> $id]));
-        var_dump($suspectPasta);
+        $suspectPasta = iterator_to_array($mdb->getFilteredContent("pasta",['_id'=> $id]))[0];
     }
     if (isset($_POST['deleteElement'])) {
         $db->deleteObject("pasta",$_POST['deleteElement']);
@@ -15,7 +14,8 @@
     }
 ?>
 <?php include_once('header.php'); ?>
-<h4 class="align-center white-text">
+<div class="container">
+<h4 class="center-align white-text">
     <?php echo $suspectPasta->pasta_name; ?>
 </h4>
 <div class="card blue darken-2">
@@ -29,4 +29,6 @@
         <button name="deleteElement" class="btn red accent-2"><i class="material-icons">delete_sweep</i></button>
     </div>
 </div>
+</div>
+<br>
 <?php include_once('footer.php'); ?>
