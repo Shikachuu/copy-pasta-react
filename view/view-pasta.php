@@ -20,17 +20,35 @@
         
     }
     if (isset($_SESSION["username"]) && isset($suspectPasta->user_name) && $suspectPasta->user_name === $_SESSION["username"]) {?>
-        <div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4 class="center-align text-white">Add pasta</h4>
-        <form method="post">
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h4 class="center-align text-white">Warning!</h4>
+            <p>Are you sure you want to delete your pasta?</p>
+            <form method="post">
+        </div>
+        <div class="modal-footer">
+            <button type="deleteElement" class="btn blue darken-2">Send</button>
+            </form>
+            <a href="#!" class="modal-close waves-effect waves-red btn-flat red">Cancel</a>
+        </div>
     </div>
-    <div class="modal-footer">
-        <button type="deleteElement" class="btn blue darken-2">Send</button>
-        </form>
-        <a href="#!" class="modal-close waves-effect waves-red btn-flat red">Cancel</a>
+    <?php }elseif (isset($suspectPasta->password)) { ?>
+        <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h4 class="center-align text-white">Warning!</h4>
+            <p>To delete your pasta you should insert your password first.</p>
+            <form method="post">
+            <div class="input-field">
+                <label for="password">Insert your password to here.</label>
+                <input type="password" name="password" id="password">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="deleteElement" class="btn blue darken-2">Send</button>
+            </form>
+            <a href="#!" class="modal-close waves-effect waves-red btn-flat red">Cancel</a>
+        </div>
     </div>
-</div>
     <?php } ?>
 <?php include_once('header.php'); ?>
 <div class="container">
