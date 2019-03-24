@@ -27,7 +27,6 @@
             </div>
         </div>
     </footer>
-    <script src="copytoclipboard.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
@@ -41,6 +40,8 @@
             textArea.parentNode.removeChild(textArea);
         }
         hljs.initHighlightingOnLoad();
+        console.log(hljs.getLanguages());
+        
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.fixed-action-btn');
         });
