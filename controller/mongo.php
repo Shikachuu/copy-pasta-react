@@ -1,7 +1,7 @@
 <?php
     class mongodb
     {
-        private static $host = "localhost:27017";
+        private static $host = "mongo:27017";
         private static $database = "copypasta";
         private $connection = "";
         private static $instance = null;
