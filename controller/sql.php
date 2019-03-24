@@ -1,12 +1,12 @@
 <?php
 class db
 {
-    private static $host = "localhost:3306";
-    //private static $host = "mysql:3306";
-    private static $username = "root";
-    //private static $username = "phpcontainer";
-    private static $password = "";
-    //private static $password = "thisIsASecretPassword";
+    //private static $host = "localhost:3306";
+    private static $host = "mysql:3306";
+    //private static $username = "root";
+    private static $username = "phpcontainer";
+    //private static $password = "";
+    private static $password = "thisIsASecretPassword";
     private static $database = "copypasta";
     private static $coding = "utf8";
     private static $instance = null;
