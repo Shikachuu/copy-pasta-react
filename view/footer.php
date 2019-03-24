@@ -30,6 +30,16 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
+        function copyToClipboard(unit) {
+            var copyText = document.getElementById(unit).textContent;
+            const textArea = document.createElement('textarea');
+            textArea.textContent = copyText;
+            document.body.append(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            textArea.parentNode.removeChild(textArea);
+        }
+        hljs.initHighlightingOnLoad();
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.fixed-action-btn');
         });
