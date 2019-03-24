@@ -19,7 +19,7 @@
         }
         
     }
-    if (isset($_SESSION["username"]) && isset($suspectPasta->user_name) && $suspectPasta->user_name === $_SESSION["username"]) {?>
+    if ($_SESSION["username"] === $suspectPasta->user_name) {?>
     <div id="modal3" class="modal">
         <div class="modal-content">
             <h4 class="center-align text-white">Warning!</h4>
@@ -27,9 +27,9 @@
             <form method="post">
         </div>
         <div class="modal-footer">
-            <button type="deleteElement" class="btn blue darken-2">Send</button>
+            <button type="deleteElement" class="btn red darken-4">Send</button>
             </form>
-            <a href="#!" class="modal-close waves-effect waves-red btn-flat red">Cancel</a>
+            <a href="#!" class="modal-close waves-effect waves-blue btn-flat blue">Cancel</a>
         </div>
     </div>
     <?php }elseif (isset($suspectPasta->password)) { ?>
@@ -44,9 +44,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="deleteElement" class="btn blue darken-2">Send</button>
+            <button type="deleteElement" class="btn red darken-4">Delete</button>
             </form>
-            <a href="#!" class="modal-close waves-effect waves-red btn-flat red">Cancel</a>
+            <a href="#!" class="modal-close waves-effect waves-blue btn-flat blue">Cancel</a>
         </div>
     </div>
     <?php } ?>
@@ -65,7 +65,7 @@
     </div>
     <div class="card-action blue darken-3 center-align">
         <p>Double click to copy the pasta</p>
-        <button name="deleteElementPopup" data-target="modal3" class="btn red accent-2"><i class="material-icons">delete_sweep</i></button>
+        <button name="deleteElementPopup" data-target="modal3" class="btn red accent-2 modal-trigger"><i class="material-icons">delete_sweep</i></button>
     </div>
 </div>
 </div>
