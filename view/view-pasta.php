@@ -57,18 +57,23 @@
 </h4>
 <div class="card blue darken-2">
     <div class="card-content text-white">
-        <p class="card-title"><?php $suspectPasta->created_at;?></p>
+        <p class="card-title"><?php echo $suspectPasta->edited_at->toDateTime()->format('D Y-m-d H:i');?></p>
         <pre class="hljs <?php echo $suspectPasta->language; ?>"><code id="<?php echo $suspectPasta->_id; ?>" onmdblclick="copyToClipboard(this.id)"><?php echo $suspectPasta->pasta_content; ?></code></pre>
         <small class="text-gary chip">Language: <?php echo $suspectPasta->language; ?></small>
-        <small class="text-gray chip">Created by: <?php echo (isset($pasta->user_name) ? $pasta->user_name : "Guest"); ?></small>
+        <small class="text-gray chip">Created by: <?php echo isset($suspectPasta->username) ? $suspectPasta->username : "Guest"; ?></small>
+        <small class="text-gray chip">Created at: <?php echo $suspectPasta->created_at->toDateTime()->format('D Y-m-d H:i'); ?></small>
     </div>
     <div class="card-action blue darken-3 center-align">
         <p>Double click to copy the pasta</p>
-        <form method="post">
-            <button name="deleteElementPopup" data-target="modal3" class="btn red accent-2"><i class="material-icons">delete_sweep</i></button>
-        </form>
+        <button name="deleteElementPopup" data-target="modal3" class="btn red accent-2"><i class="material-icons">delete_sweep</i></button>
     </div>
 </div>
 </div>
 <br>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.modal').modal();
+});
+</script>
 <?php include_once('footer.php'); ?>

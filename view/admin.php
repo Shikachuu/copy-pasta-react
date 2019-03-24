@@ -38,12 +38,12 @@ if (isset($_POST['deleteElement'])) {
 <?php include('addpasta.php') ?>
 <?php include('footer.php'); ?>
 <?php }else {
-    include_once["header"];
-    include_once["footer"];
+    include_once("header.php");
     header("refresh:3; url=../view/index.php");
  ?>
 <h1 class="white-text alig-center">Rossz szomszédságban kötöttél ki szerecsen!</h1>
 <div class="loader center-align">
     <span>{</span><span>}</span>
 </div>
-<?php } ?>
+<?php 
+    include_once("footer.php");} ?>

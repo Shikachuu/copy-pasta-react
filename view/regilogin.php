@@ -1,6 +1,5 @@
 <?php include('header.php'); ?>
 <div class="container">
-    <div class="col l5 s12">
         <h2 class="center-align white-text">Login</h2>
         <form action="user.php" method="post" >
             <div class="row">
@@ -37,7 +36,6 @@
             </div>
             <button class="btn blue darken-2 waves-effect waves-light fadeInDown" type="submit" name="register">Register<i class="material-icons right">person_add</i></button>
         </form>
-    </div>
     <br>
 </div>
 <?php include('footer.php'); ?>
