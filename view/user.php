@@ -12,10 +12,10 @@
         }
         ?>
     </h3>
-    <p class="center-align white-text">You will be redirected to the mainpage soon.</p>
+    <p class="center-align white-text">You will be redirected soon.</p>
     <div class="loader center-align">
         <span>{</span><span>}</span>
     </div>
 </div>
-<?php header("refresh:3; url=index.php"); ?>
+<?php isset($_SESSION["username"]) ? header("refresh:3; url=index.php") : header("refresh:3; url=regilogin.php"); ?>
 <?php require_once('../view/footer.php'); ?>

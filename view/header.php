@@ -3,6 +3,7 @@ if (isset($_POST['logout'])) {
     if (isset($_SESSION["user_id"])&&isset($_SESSION["username"])) {
         session_unset();
         session_destroy();
+        header("Locaiton:index.php");
     }else {
         header("Locaiton:index.php");
     }
@@ -43,6 +44,7 @@ if (isset($_POST['logout'])) {
 
 </head>
 <body class="grey darken-3">
+<main>
     <nav class="blue darken-2 fadeInDown">
         <div class="nav-wrapper">
             <a href="index.php" class="brand-logo"> { Copy Pasta }</a>

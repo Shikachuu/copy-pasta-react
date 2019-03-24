@@ -74,8 +74,8 @@
         {
             if ($this->validate($lusername,$lpassword)) {
                 if ($this->isUserExist() === true) {
-                    $dummy = $this->mysqldb->query("SELECT * FROM users WHERE username='".$this->username."'");
-                    if (password_verify($lpassword,$dummy["password"])) {
+                    $dummy = $this->mysqldb->getRow("SELECT * FROM users WHERE username='".$this->username."'");
+                    if ($this->password === $dummy["password"]) {
                         $_SESSION["user_id"] = $dummy["user_id"];
                         $_SESSION["username"] = $this->username;
                         if ($this->username == "@&@AKfd2sad@") {
