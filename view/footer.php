@@ -40,8 +40,14 @@
             textArea.parentNode.removeChild(textArea);
         }
         hljs.initHighlightingOnLoad();
-        console.log(hljs.getLanguages());
-        
+        var test = hljs.listLanguages();
+        test.forEach(element => {
+            let select = document.getElementById('language');
+            let opt = document.createElement('option');
+            opt.value = element;
+            opt.innerHTML = element;
+            select.appendChild(opt);
+        });
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.fixed-action-btn');
         });

@@ -48,11 +48,6 @@
             </div>
             <div class="input-field">
                 <select name="language" id="language" style="display:inherit !important">
-                    <option value="plaintext">Choose language</option>
-                    <option value="plaintext">Plain Text</option>
-                    <option value="python">Python</option>
-                    <option value="javascript">JavaScript</option>
-                    <option value="php">PHP</option>
                 </select>
             </div>
             <div class="input-field">
@@ -67,6 +62,7 @@
 </div>
 <?php }?>
 <script src="js/jquery-3.3.1.min.js"></script>
+<script src=""></script>
 <script>
 $(document).ready(function(){
     $('.modal').modal();
