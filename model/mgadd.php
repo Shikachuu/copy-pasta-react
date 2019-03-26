@@ -46,9 +46,10 @@
                 }
                 $now = new DateTime();
                 $nowmongo = new MongoDB\BSON\UTCDateTime($now->getTimestamp()*1000);
-                $insertAssocArr = ['_id' => new MongoDB\BSON\ObjectID,'pasta_name' => $this->inName,'pasta_content' => $this->inCont, 'created_at' => $nowmongo, 'edited_at' => $nowmongo, 'language' => $this->inLang, 'password' => $this->inPass, 'is_private' => $priv];
+                $mongoID = new MongoDB\BSON\ObjectID;
+                $insertAssocArr = ['_id' => $mongoID,'pasta_name' => $this->inName,'pasta_content' => $this->inCont, 'created_at' => $nowmongo, 'edited_at' => $nowmongo, 'language' => $this->inLang, 'password' => $this->inPass, 'is_private' => $priv];
                 $mdb->insertObject("pasta", $insertAssocArr);
-                return "Your Pasta Has Been Submited. :)";
+                return ["Your Pasta Has Been Submited. :)",$mongoID];
             }else {
                 return $this->errorMsg;
             }

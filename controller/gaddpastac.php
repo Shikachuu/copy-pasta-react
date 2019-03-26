@@ -19,12 +19,13 @@
 </head>
 <body class="white-text blue darken-3">
     <div class="container">
-        <h3><?php echo $model->Upload(); ?></h3>
+        <h3><?php $dummy1 = $model->Upload(); echo isset($dummy1[0]) ? $dummy1[0] : $dummy1; ?></h3>
         <p>You will be redirected to the main page.</p>
         <div class="loader center-align">
             <span>{</span><span>}</span>
         </div>
-<?php header("refresh:3; url=../view/index.php"); ?>
+<?php header("refresh:3; url=../view/view-pasta.php?id=".$dummy1[1]); ?>
     </div>
 </body>
 </html>
+<script></script>

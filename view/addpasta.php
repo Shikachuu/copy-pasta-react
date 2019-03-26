@@ -13,10 +13,6 @@
             </div>
             <div class="input-field">
                 <select name="language" id="language"style="display:inherit !important">
-                    <option value="plaintext">Plain Text</option>
-                    <option value="python">Python</option>
-                    <option value="javascript">JavaScript</option>
-                    <option value="php">PHP</option>
                 </select>
             </div>
             <div class="input-field">

@@ -8,7 +8,7 @@
     ?>
         <div class="card large hoverable blue darken-2">
             <a style="display: block; margin: 0 auto; font-weight: bold; font-size: 20px;" class="white-text center-align" href="view-pasta.php?id=<?php echo $pasta->_id; ?>" class="card-title"><?php echo $pasta->pasta_name; ?></a>
-            <pre onmdblclick="copyToClipboard(this.id)"><code class="hljs <?php echo $pasta->language ?>" style="height:65vh" ><?php echo $pasta->pasta_content; ?></code></pre>
+            <pre id="<?php echo $pasta->_id?>" ondblclick="copyToClipboard(this.id)"><code class="hljs <?php echo $pasta->language ?>" style="height:65vh" ><?php echo $pasta->pasta_content; ?></code></pre>
             <div class="card-action blue darken-3">
                 <small class="text-gray chip">Created by: <?php echo isset($pasta->username) ? $pasta->username : "Guest" ?></small>
                 <small class="text-gray chip">At: <?php echo $pasta->created_at->toDateTime()->format('D Y-m-d H:i'); ?> </small>

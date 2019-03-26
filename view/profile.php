@@ -7,7 +7,6 @@ if (isset($_SESSION["username"]) && isset($_SESSION["user_id"])) {
         <div class="col s12 m4 13 blue darken-4"> <!-- Side user bar -->
             <h3 class="center-align white-text"><?php echo $Profiler->username; ?></h3>
             <p class="center-align white-text"><?php echo $Profiler->email; ?></p>
-            <p class="center-align white-text">Your pastas: <?php echo $pastaCounter; ?></p>
         </div>
         <div class="col s12 m8 19 blue darken-4"> <!-- Offset Middle content -->
             <ul class="collection with-header blue darken-4">
