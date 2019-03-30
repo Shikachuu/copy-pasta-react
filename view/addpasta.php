@@ -1,7 +1,7 @@
 <?php if (isset($_SESSION["username"])&& isset($_SESSION["user_id"])) { ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4 class="center-align text-white">Add pasta</h4>
+        <h4 class="center-align">Add pasta</h4>
         <form action="../controller/uaddpastac.php" method="post">
             <div class="input-field">
                 <label for="pasta_name">Name your Pasta</label>
