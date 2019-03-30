@@ -19,11 +19,6 @@ services:
     depends_on:
       - mongo
       - mysql
-    volumes:
-      # For development purposes only!
-      - ./view:/app/view:ro
-      - ./model:/app/model:ro
-      - ./controller:/app/controller:ro
 
   http:
     image: nginx
