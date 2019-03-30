@@ -20,7 +20,7 @@
         private function Verify()
         {
             $isVerified = false;
-            if((strlen($this->inName) > 4) && (strlen($this->inName) < 64)){
+            if((strlen($this->inName) >= 4) && (strlen($this->inName) <= 64)){
                 if (!empty($this->inUser) && !empty($this->inUserID)) {
                     $isVerified = true;
                 }else {
