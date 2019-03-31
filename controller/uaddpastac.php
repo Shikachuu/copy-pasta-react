@@ -25,7 +25,7 @@
         <div class="loader center-align">
             <span>{</span><span>}</span>
         </div>
-        <?php echo "<script>setTimeout(()=>{window.location.href='view-pasta.php?id=".$dummy1[1]."';},1500)</script>"; ?>
+        <?php echo "<script>setTimeout(()=>{window.location.href='../view/view-pasta.php?id=".$dummy1[1]."';},1500)</script>"; ?>
     </div>
 </body>
 </html>
