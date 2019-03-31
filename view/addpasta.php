@@ -28,7 +28,7 @@
 <?php }else { ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4 class="center-align white-text">Add pasta</h4>
+        <h4 class="center-align">Add pasta</h4>
         <form action="../controller/gaddpastac.php" method="post">
             <div class="input-field">
                 <label for="pasta_name">Name your Pasta(4-64char)</label>

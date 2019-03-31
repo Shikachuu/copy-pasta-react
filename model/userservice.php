@@ -62,6 +62,8 @@
                             $_SESSION["admin"] = "This is my kingdom now!";
                         }
                         return "The registration was successful. You have been automaticaly logged in.";
+                    }else{
+                        return "The two password doesn't match.";
                     }
                 }else {
                     return $this->errorMSG;
