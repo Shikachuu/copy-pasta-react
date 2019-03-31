@@ -3,9 +3,9 @@ if (isset($_POST['logout'])) {
     if (isset($_SESSION["user_id"])&&isset($_SESSION["username"])) {
         session_unset();
         session_destroy();
-        header("Locaiton:index.php");
+        echo "<script>window.location.href='index.php';</script>";
     }else {
-        header("Locaiton:index.php");
+        echo "<script>window.location.href='index.php';</script>";
     }
 }
 ?>

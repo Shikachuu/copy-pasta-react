@@ -8,12 +8,12 @@
     if (isset($_POST['deleteElement'])) {
         if ($_SESSION["username"] == $suspectPasta->user_name || isset($_SESSION["admin"])) {
             $mdb->deleteObject("pasta",$id);
-            header("refresh:3; url=index.php");
+            echo "<script>setTimeout(()=>{window.location.href='index.php';},1500)</script>";
         }
         else {
             if ($suspectPasta->password == md5($_POST["password"])||isset($_SESSION["admin"])) {
                 $mdb->deleteObject("pasta",$id);
-                header("refresh:3; url=index.php");
+                echo "<script>setTimeout(()=>{window.location.href='index.php';},1500)</script>";
             }
         }
     }?>

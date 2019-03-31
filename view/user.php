@@ -17,5 +17,5 @@
         <span>{</span><span>}</span>
     </div>
 </div>
-<?php isset($_SESSION["username"]) ? header("refresh:3; url=index.php") : header("refresh:3; url=regilogin.php"); ?>
+<?php echo isset($_SESSION["username"]) ?"<script>setTimeout(()=>{window.location.href='index.php';},1500)</script>" :  "<script>setTimeout(()=>{window.location.href='regilogin.php';},1500)</script>"; ?>
 <?php require_once('../view/footer.php'); ?>
