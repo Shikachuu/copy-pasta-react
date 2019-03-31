@@ -6,12 +6,12 @@
         $suspectPasta = iterator_to_array($mdb->getFilteredContent("pasta",['_id'=> $id]))[0];
     }
     if (isset($_POST['deleteElement'])) {
-        if ($_SESSION["username"] == $suspectPasta->user_name) {
+        if ($_SESSION["username"] == $suspectPasta->user_name || isset($_SESSION["admin"])) {
             $mdb->deleteObject("pasta",$id);
             header("refresh:3; url=index.php");
         }
         else {
-            if ($suspectPasta->password == md5($_POST["password"])) {
+            if ($suspectPasta->password == md5($_POST["password"])||isset($_SESSION["admin"])) {
                 $mdb->deleteObject("pasta",$id);
                 header("refresh:3; url=index.php");
             }
