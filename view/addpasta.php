@@ -1,10 +1,10 @@
 <?php if (isset($_SESSION["username"])&& isset($_SESSION["user_id"])) { ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4 class="center-align text-white">Add pasta</h4>
+        <h4 class="center-align">Add pasta</h4>
         <form action="../controller/uaddpastac.php" method="post">
             <div class="input-field">
-                <label for="pasta_name">Name your Pasta</label>
+                <label for="pasta_name">Name your Pasta (4-64char)</label>
                 <input type="text" name="pasta_name" id="pasta_name">
             </div>
             <div class="input-field">
@@ -28,10 +28,10 @@
 <?php }else { ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4 class="center-align white-text">Add pasta</h4>
+        <h4 class="center-align">Add pasta</h4>
         <form action="../controller/gaddpastac.php" method="post">
             <div class="input-field">
-                <label for="pasta_name">Name your Pasta</label>
+                <label for="pasta_name">Name your Pasta(4-64char)</label>
                 <input type="text" name="pasta_name" id="pasta_name">
             </div>
             <div class="input-field">
@@ -39,7 +39,7 @@
                 <textarea class="materialize-textarea" name="pasta_content" id="pasta_content" cols="30" rows="10"></textarea>
             </div>
             <div class="input-field">
-                <label for="password">Put a password here, to delete or manage it</label>
+                <label for="password">Put a password here, to delete or manage it(at least 8 char)</label>
                 <input type="password" name="password" id="password">
             </div>
             <div class="input-field">

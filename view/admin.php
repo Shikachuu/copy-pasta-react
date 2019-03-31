@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION["admin"]) && $_SESSION["admin"] == "This is my kingdom now!") {
+if (isset($_SESSION["admin"])) {
 include('header.php');
 if (isset($_POST['deleteElement'])) {
     $db->deleteObject("pasta",$_POST['deleteElement']);

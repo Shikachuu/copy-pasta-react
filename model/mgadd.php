@@ -18,9 +18,9 @@
         private function Verify()
         {
             $isVerified = false;
-            if((strlen($this->inName) > 4) && (strlen($this->inName) < 64)){
+            if((strlen($this->inName) >= 4) && (strlen($this->inName) <= 64)){
                 if (!empty($this->inPass)) {
-                    if (strlen($this->inCont)>4) {
+                    if (strlen($this->inCont)>=4) {
                         $isVerified = true;
                     }else {
                         $this->errorMsg = "Error Processing Request, The Password Is Too Short";
