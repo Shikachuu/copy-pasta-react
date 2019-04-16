@@ -36,8 +36,6 @@ services:
     image: mysql:5.7
     networks:
       - internal
-    ports:
-     - 10:3306
     environment:
        MYSQL_ROOT_PASSWORD: 1secret1
        MYSQL_DATABASE: copypasta
