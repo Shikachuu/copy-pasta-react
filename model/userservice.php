@@ -15,12 +15,12 @@
         {
             $valid = false;
             if (!empty($username) && !empty($password)) {
-                if (strlen($password) >= 8) {
+                if (preg_match('~[A-Z]~', $password) && preg_match('~[a-z]~', $password) && preg_match('~\d~', $password) && strlen($password) > 7) {
                     $this->username = $this->mysqldb->escape($username);
                     $this->password = md5($this->mysqldb->escape($password));
                     $valid = true;
                 }else {
-                    $this->errorMSG = " The password must be atleast 8 char long.";
+                    $this->errorMSG = " The password must be atleast 8 char long and must contains at least one upper case, one lower case character and a number.";
                 }
             }else {
                 $this->errorMSG = " You should fill all the fields.";
